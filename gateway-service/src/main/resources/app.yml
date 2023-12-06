@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id : r1
+          uri: http://127.0.0.1:8081/
+          predicates:
+            - Path=/customers/**
+        - id : r2
+          uri: http://127.0.0.1:8082/
+          predicates:
+            - Path=/accounts/**
+  application:
+    name: gateway-service
+server:
+  port: 8888
+
+
+
+
+
+
